@@ -26,6 +26,7 @@ namespace ReadAndWriteFile
             }
         }
 
+       
         public static IEnumerable<object[]> WriteXmlTwoAsync_TestData()
         {
             return new object[][]
@@ -39,7 +40,7 @@ namespace ReadAndWriteFile
         [MemberData("WriteXmlTwoAsync_TestData")]
         public static void TestWriteXmlTwoAsync(string contents)
         {
-            for (int i = 0; i <= 100; i++)
+            for (int i = 0; i <= 1000; i++)
             {
                 Assert.ThrowsAsync<IOException>(() => XMLFile.WriteXmlTwoAsync(contents));
             }
